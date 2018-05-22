@@ -1,14 +1,18 @@
-<h1>Task : <%=  @task.title %></h1>
-<p><%= @task.details%></p>
-<% if @task.completed %>
-<i class="fas fa-check-square"></i><span>This task is completed</span>
-  <% else %>
-  <i class="far fa-square"></i><span>This task is not completed yet</span>
-<% end %>
-<div>
-<%= link_to 'Return to tasks', tasks_path, class:"btn btn-primary btn-lg" %>
-</div>
+<div class="wrapper">
+  <div class="container">
+    <h1>Task : <%=  @task.title %></h1>
+    <p><%= @task.details%></p>
+    <% if @task.completed %>
+    <i class="fas fa-check-square"></i> <span>This task is completed</span>
+      <% else %>
+      <i class="far fa-square"></i> <span>This task is not completed yet</span>
+    <% end %>
+    <div class="edit">
+      <%= link_to 'Edit this task', edit_task_path, class:"btn btn-danger btn-lg" %>
+    </div>
+    <div class="return">
+    <%= link_to 'Return to tasks', tasks_path, class:"btn btn-primary btn-lg" %>
+    </div>
 
-<div class="edit">
-  <%= link_to 'Edit this task', edit_task_path, class:"btn btn-danger btn-lg" %>
+  </div>
 </div>
